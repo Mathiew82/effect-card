@@ -1,0 +1,97 @@
+/* line 1, ../scss/styles.scss */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, ../scss/styles.scss */
+body {
+  background-color: #e0e0e0;
+  margin-top: 20px;
+  perspective: 1000px;
+}
+
+/* line 14, ../scss/styles.scss */
+.card-container {
+  width: 300px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+/* line 20, ../scss/styles.scss */
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+/* line 31, ../scss/styles.scss */
+.card:hover > .card__header > .card-header-img {
+  transform: translateZ(60px);
+}
+/* line 37, ../scss/styles.scss */
+.card:hover > .card__body > .card-title {
+  transform: translateZ(20px);
+}
+/* line 43, ../scss/styles.scss */
+.card:hover > .card__footer > .card-btn {
+  transform: translateZ(30px);
+}
+/* line 49, ../scss/styles.scss */
+.card > .card__header {
+  width: 100%;
+  height: 60%;
+  border-radius: 30px 30px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 57, ../scss/styles.scss */
+.card > .card__header > .card-header-img {
+  width: 65%;
+  transition: all .5s;
+}
+/* line 63, ../scss/styles.scss */
+.card > .card__body {
+  width: 100%;
+  height: 15%;
+}
+/* line 67, ../scss/styles.scss */
+.card > .card__body > .card-title {
+  font-size: 24px;
+  transition: transform .6s;
+}
+/* line 73, ../scss/styles.scss */
+.card > .card__footer {
+  width: 100%;
+  height: 25%;
+  border-radius: 0 0 30px 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+/* line 83, ../scss/styles.scss */
+.card > .card__footer > .card-btn {
+  min-width: 120px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  transition: transform .4s;
+}
+/* line 92, ../scss/styles.scss */
+.card > .card__footer > .card-btn.show {
+  background-color: #54b;
+}
+/* line 96, ../scss/styles.scss */
+.card > .card__footer > .card-btn.download {
+  background-color: #b47;
+}
