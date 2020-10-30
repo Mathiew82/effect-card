@@ -1,3 +1,11 @@
+// Variables
+$blue   : #87e0fd;
+$red    : #fd87d0;
+$green  : #87fde7;
+$yellow : #fdf587;
+$gray   : #ddd;
+
+// Theme
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -13,7 +21,7 @@ body {
 
 .card-container {
   width: 300px;
-  height: 350px;
+  height: 450px;
   margin: 0 auto;
 }
 
@@ -35,6 +43,7 @@ body {
 
     > .card__footer {
       > .card-btn {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
         transform: translateZ(30px);
       }
     }
@@ -42,12 +51,13 @@ body {
 
   > .card__header {
     width: 100%;
-    height: 60%;
-    background: linear-gradient(135deg, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+    height: 40%;
+    background-color: $blue;
     border-radius: 30px 30px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s;
 
     > .card-header-img {
       width: 90%;
@@ -57,51 +67,122 @@ body {
 
   > .card__body {
     width: 100%;
-    height: 20%;
+    height: 44%;
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     align-items: center;
+    padding: 20px;
 
     > .card-title {
       font-size: 24px;
-      transition: transform .6s;
+      font-weight: 600;
+    }
+
+    > .card-description {
+      font-size: 14px;
+    }
+
+    > .card-color-list {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      list-style-position: inside;
+      margin: 20px 0 0 0;
+      padding: 0;
+
+      > li {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(0, 0, 0, .3);
+        border-radius: 20px;
+        display: inline-block;
+        margin: 0 3px;
+        transition: border .2s;
+
+        &:hover {
+          border-color: rgba(0, 0, 0, .6);
+        }
+      }
+
+      > .card-color-list--blue {
+        background-color: $blue;
+      }
+      > .card-color-list--red {
+        background-color: $red;
+      }
+      > .card-color-list--green {
+        background-color: $green;
+      }
+      > .card-color-list--yellow {
+        background-color: $yellow;
+      }
+      > .card-color-list--gray {
+        background-color: $gray;
+      }
+    }
+
+    > .card-wrapper-price {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+      margin-top: 25px;
+
+      > .card-wrapper-price__new {
+        color: #10304a;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        margin-right: 4px;
+      }
+      > .card-wrapper-price__old {
+        color: #50708a;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        margin-left: 4px;
+        padding-bottom: 3px;
+        text-decoration: line-through;
+      }
     }
   }
 
   > .card__footer {
     width: 100%;
-    height: 20%;
+    height: 16%;
     border-radius: 0 0 30px 30px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 10px 20px 0 20px;
+    padding: 15px 20px 0 20px;
 
     > .card-btn {
       min-width: 120px;
-      height: 40px;
-      line-height: 40px;
       border: none;
-      border-radius: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
-      color: white;
+      border-radius: 25px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
       cursor: pointer;
-      transition: transform .4s, background .2s;
+      padding: 8px 0;
+      transition: box-shadow .4s, transform .4s, background .2s;
 
       &.show {
-        background-color: #54b;
+        background-color: #303234;
+        color: white;
 
         &:hover {
-          background-color: #329;
+          background-color: #505254;
         }
       }
 
       &.download {
-        background-color: #b47;
+        background-color: #f5c650;
+        color: #222;
 
         &:hover {
-          background-color: #925;
+          background-color: #ffd660;
         }
       }
     }
